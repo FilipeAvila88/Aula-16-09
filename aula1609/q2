@@ -1,0 +1,27 @@
+let materias = [
+    { nome: "Matemática", nota: 75, frequencia: 85 },
+    { nome: "Português", nota: 90, frequencia: 95 },
+    { nome: "Química", nota: 60, frequencia: 80 },
+    { nome: "História", nota: 70, frequencia: 70 },
+    { nome: "Geografia", nota: 55, frequencia: 65 },
+    { nome: "Física", nota: 80, frequencia: 90 },
+    { nome: "Biologia", nota: 50, frequencia: 60 },
+    { nome: "Educação Física", nota: 85, frequencia: 100 }
+];
+
+
+let somaFrequencias = 0;
+for (let i = 0; i < materias.length; i++) {
+    somaFrequencias += materias[i].frequencia;
+}
+let mediaFrequencia = somaFrequencias / materias.length;
+console.log("Média de Frequência: " + mediaFrequencia.toFixed(2) + "%");
+
+
+let contadorNotasAcimaDe60 = 0;
+for (let i = 0; i < materias.length; i++) {
+    if (materias[i].nota > 60) {
+        contadorNotasAcimaDe60++;
+    }
+}
+console.log("Quantidade de matérias com nota acima de 60%: " + contadorNotasAcimaDe60);
