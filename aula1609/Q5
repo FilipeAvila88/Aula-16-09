@@ -1,0 +1,46 @@
+let filmes = [];
+
+for (let i = 0; i < 6; i++) {
+    let nome = prompt("Nome do filme " + i + ":");
+    let nota = parseFloat(prompt("Nota do filme " + nome + ":"));
+    filmes.push({ nome: nome, nota: nota });
+}
+
+let opcao = "";
+
+while (opcao != "d") {
+    opcao = prompt(
+        "Escolha:\n" +
+        "a - Ver 1 filme\n" +
+        "b - Avaliar filme\n" +
+        "c - Alterar filme\n" +
+        "d - Sair e mostrar tudo"
+    );
+
+    if (opcao == "a") {
+        let i = prompt("Qual índice do filme (0 a 5)?");
+        alert("Filme: " + filmes[i].nome + "\nNota: " + filmes[i].nota);
+    }
+
+    if (opcao == "b") {
+        let i = prompt("Qual índice do filme (0 a 5)?");
+        let novaNota = parseFloat(prompt("Nova nota:"));
+        filmes[i].nota = (filmes[i].nota + novaNota) / 2;
+        alert("Nota atualizada: " + filmes[i].nota);
+    }
+
+    if (opcao == "c") {
+        let i = prompt("Qual índice do filme (0 a 5)?");
+        filmes[i].nome = prompt("Novo nome:");
+        filmes[i].nota = parseFloat(prompt("Nova nota:"));
+        alert("Filme atualizado.");
+    }
+
+    if (opcao == "d") {
+        let texto = "";
+        for (let i = 0; i < filmes.length; i++) {
+            texto += i + " - " + filmes[i].nome + " | Nota: " + filmes[i].nota + "\n";
+        }
+        alert(texto);
+    }
+}
